@@ -17,8 +17,8 @@ public:
 	int dohvVrednost() const { return vrednost; }
 	string dohvIme() const { return ime; }
 
-	void povecajVrednost(int proc);
-	void smanjiVrednost(int proc);
+	void povecajVrednost(float proc);
+	void smanjiVrednost(float proc);
 
 	friend bool operator==(const Igrac& i1, const Igrac& i2) {
 		if (i1.ime == i2.ime && i1.vrednost == i2.vrednost)return true;

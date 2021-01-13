@@ -29,7 +29,7 @@ public:
 	int dohvatiVrednostTima() const;//
 	double dohvatiSrVrednost() const ;//
 
-	Igrac& operator[](int i) {
+	Igrac& operator[](int i) {	
 		return *igraci[i];
 	}
 
@@ -60,6 +60,14 @@ public:
 		}
 		it << "]" << endl;
 		return it;
+	}
+
+	bool hasPlayerOnPosiotion(int i) {
+		return igraci[i] != nullptr;
+	}
+
+	int getKapacitet() {
+		return kap;
 	}
 
 

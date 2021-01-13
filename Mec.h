@@ -20,7 +20,7 @@ private:
 	Par<Tim>* par;
 	Ishod ishod;
 	bool odigra;
-	Par<int> parpoena;
+	Par<int>* parpoena;
 
 
 public:
@@ -29,7 +29,7 @@ public:
 
 	Mec(const Tim& domacin,const Tim& gost) {
 		par = new Par<Tim>(domacin, gost);
-		
+		parpoena = new Par<int>();
 		odigra = false;
 		ishod = NIJE_ODIGRAN;
 	}
@@ -46,10 +46,11 @@ public:
 	bool odigran() const {return odigra;}
 
 	friend ostream& operator<<(ostream& it, const Mec& m) {
-		it << m.par;
+		it << *m.par;
 		if (m.odigran()) {
 			cout << "odigran";
-			//switch (ishod)
+			it << *m.parpoena;
+
 			
 		}
 		else {

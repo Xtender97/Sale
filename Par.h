@@ -43,7 +43,7 @@ public:
 
 
 	friend ostream& operator<<(ostream& it, const Par& p) {
-		it << "[" << p.dohvatiPrvi() << " - " << p.dohhvatiDrugi() << "]";
+		it << "[" << *p.dohvatiPrvi() << " - " << *p.dohvatiDrugi() << "]";
 		return it;
 	}
 

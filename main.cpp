@@ -31,14 +31,20 @@ int main() {
 	
 	cout << t2;
 	
-	Mec m1(t1, t1);
+	Mec m1(t1, t2);
 
 	cout << m1.dohvatiPar()->dohvatiPrvi()->dohvatiVrednostTima() << endl;
 
-	cout << m1.dohvatiPar()->dohvatiDrugi()->dohvatiVrednostTima();
+	cout << m1.dohvatiPar()->dohvatiDrugi()->dohvatiVrednostTima() << endl;
 
 	
-	//m1.odigrajMec();
+	m1.odigrajMec();
+
+	cout << m1 << endl;
+
+	// cout << t1 << endl;
+		
+	// cout << t2 << endl;
 
 	
 	

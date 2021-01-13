@@ -5,7 +5,7 @@
 Par<int>* Mec::dohvatiParPoena() 
 {
 	if (!odigran()) throw GreskaMec();
-	return &parpoena;
+	return parpoena;
 }
 
 
@@ -16,43 +16,48 @@ void Mec::odigrajMec()
 	int b = this->dohvatiPar()->dohvatiDrugi()->dohvatiVrednostTima();
 	odigra = true;
 
-	/*if (a > b) {
+	if (a > b) {
+		cout << "Prvi jaci" << endl;
 		ishod = POBEDA_DOMACIN;
-		parpoena.postaviPrvi(3);
-		parpoena.postaviDrugi(0);
+		parpoena->postaviPrvi(3);
+		parpoena->postaviDrugi(0);
 
-		for (int i = 0; i < par->dohvatiPrvi()->dohvatiBroj(); i++) {
-			if (par->dohvatiPrvi() != nullptr) {
+		for (int i = 0; i < par->dohvatiPrvi()->getKapacitet(); i++) {
+			if (par->dohvatiPrvi() != nullptr && par->dohvatiPrvi()->hasPlayerOnPosiotion(i)) {
 				(*par->dohvatiPrvi())[i].povecajVrednost(10);
 			}
 		}
 
-		for (int i = 0; i < par->dohvatiDrugi()->dohvatiBroj(); i++)
-			if (par->dohvatiDrugi() != nullptr) {
+		for (int i = 0; i < par->dohvatiDrugi()->getKapacitet(); i++)
+			if (par->dohvatiDrugi() != nullptr && par->dohvatiPrvi()->hasPlayerOnPosiotion(i)) {
 				(*par->dohvatiDrugi())[i].smanjiVrednost(10);
 			}
 
 
 	}
 	else if (a < b) {
-		ishod = POBEDA_GOST;
-		parpoena.postaviDrugi(3);
-		parpoena.postaviPrvi(0);
 
-		for (int i = 0; i < par->dohvatiPrvi()->dohvatiBroj(); i++) {
-			if (par->dohvatiPrvi() != nullptr) {
-				(*par->dohvatiPrvi())[i].smanjiVrednost(10);
+		ishod = POBEDA_GOST;
+		parpoena->postaviDrugi(3);
+		parpoena->postaviPrvi(0);
+
+
+		for (int i = 0; i < par->dohvatiPrvi()->getKapacitet(); i++) {
+			if (par->dohvatiPrvi() != nullptr && par->dohvatiPrvi()->hasPlayerOnPosiotion(i)) {	
+				(*par->dohvatiPrvi())[i].smanjiVrednost(10);		
 			}
 		}
 
-		for (int i = 0; i < par->dohvatiDrugi()->dohvatiBroj(); i++)
-			if (par->dohvatiDrugi() != nullptr) {
+		for (int i = 0; i < par->dohvatiDrugi()->getKapacitet(); i++) {
+			if (par->dohvatiDrugi() != nullptr  && par->dohvatiDrugi()->hasPlayerOnPosiotion(i)) {
 				(*par->dohvatiDrugi())[i].povecajVrednost(10);
 			}
+		}
+
 	}
 	else {
 		ishod = NERESENO;
-		parpoena.postaviPrvi(1);
-		parpoena.postaviDrugi(1);
-	}*/
+		parpoena->postaviPrvi(1);
+		parpoena->postaviDrugi(1);
+	}
 }
